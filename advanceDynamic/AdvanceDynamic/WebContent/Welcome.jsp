@@ -7,19 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		String fname = request.getParameter("firstName");
-		String lname = request.getParameter("lastName");
-		String login = request.getParameter("loginId");
-		String pass = request.getParameter("password");
-		String dob = request.getParameter("dob");
-		String address = request.getParameter("address");
-	%>
-	<h3><%=fname%></h3>
-	<h3><%=lname%></h3>
-	<h3><%=login%></h3>
-	<h3><%=pass%></h3>
-	<h3><%=dob%></h3>
-	<h3><%=address%></h3>
+	<%@include file="header.jsp"%>
+	<h1>Welcome User</h1>
+	<%@include file="Footer.jsp"%> 
 </body>
 </html>

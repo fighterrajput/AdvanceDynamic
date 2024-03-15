@@ -44,6 +44,8 @@ public class UserModel {
 		int i = ps.executeUpdate();
 
 		System.out.println("Data inserted = " + i);
+		
+		conn.close();
 
 	}
 
@@ -65,6 +67,8 @@ public class UserModel {
 		int i = ps.executeUpdate();
 
 		System.out.println("Data updated = " + i);
+		
+		conn.close();
 
 	}
 
@@ -79,6 +83,8 @@ public class UserModel {
 		int i = ps.executeUpdate();
 
 		System.out.println("Data deleted = " + i);
+		
+		conn.close();
 
 	}
 
@@ -104,8 +110,8 @@ public class UserModel {
 			bean.setDob(rs.getDate(6));
 			bean.setAddress(rs.getString(7));
 		}
+		conn.close();
 		return bean;
-
 	}
 
 	public UserBean authenticate(String loginId, String password) throws Exception {
@@ -131,8 +137,8 @@ public class UserModel {
 			bean.setDob(rs.getDate(6));
 			bean.setAddress(rs.getString(7));
 		}
+		conn.close();
 		return bean;
-
 	}
 
 	public List search(UserBean bean, int pageNo, int pageSize) throws Exception {
@@ -184,6 +190,7 @@ public class UserModel {
 			bean.setAddress(rs.getString(7));
 			list.add(bean);
 		}
+		conn.close();
 		return list;
 
 	}

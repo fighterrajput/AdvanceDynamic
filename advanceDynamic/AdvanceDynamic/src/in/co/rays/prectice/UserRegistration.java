@@ -28,7 +28,7 @@ public class UserRegistration extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// System.out.println("UserRegistration servlet dopost ");
+		System.out.println("UserRegistration servlet dopost");
 		String fname = req.getParameter("firstName");
 		String lname = req.getParameter("lastName");
 		String login = req.getParameter("loginId");
@@ -44,9 +44,8 @@ public class UserRegistration extends HttpServlet {
 		bean.setLoginId(login);
 		bean.setPassword(pass);
 		try {
-			bean.setDob(sdf.parse("dob"));
+			bean.setDob(sdf.parse(dob));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		bean.setAddress(address);
@@ -55,7 +54,6 @@ public class UserRegistration extends HttpServlet {
 		try {
 			model.add(bean);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		resp.sendRedirect("UserRegistration.jsp");
