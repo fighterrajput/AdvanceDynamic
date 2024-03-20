@@ -1,0 +1,73 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		int pageNo = (int) request.getAttribute("pageNo");
+		int index = ((pageNo - 1) * 5) + 1;
+		List nextList = (List) request.getAttribute("nextList");
+		List list = (List) request.getAttribute("list");
+
+		Iterator it = list.iterator();
+	%>
+	<%@include file="header.jsp"%>
+	<form action="UserListCtl" method="post">
+		<table>
+			<tr>
+				<td><input type="text" name="firstName"></td>
+				<td><input type="submit" name="operation" value="search"></td>
+				<td><input type="submit" name="operation" value="add"></td>
+				<td><input type="date" name="operation" value="dob"></td>
+			</tr>
+
+		</table>
+
+		<table border="1%" style="width: 100%">
+			<tr>
+				<th>S.No.</th>
+				<th>FirstName</th>
+				<th>LastName</th>
+				<th>LoginID</th>
+				<th>Password</th>
+				<th>DOB</th>
+				<th>Address</th>
+			</tr>
+			<%
+				while (it.hasNext()) {
+
+					UserBean bean = (UserBean) it.next();
+			%>
+			<tr>
+				<td align="center"><%=index++%></td>
+				<td align="center"><%=bean.getFirstName()%></td>
+				<td align="center"><%=bean.getLastName()%></td>
+				<td align="center"><%=bean.getLoginId()%></td>
+				<td align="center"><%=bean.getPassword()%></td>
+				<td align="center"><%=bean.getDob()%></td>
+				<td align="center"><%=bean.getAddress()%></td>
+			</tr>
+			<%
+				}
+			%>
+
+		</table>
+		<table>
+			<tr>
+				<td><input type="submit" name="operation" value="privious"
+					<%=(pageNo != 1) ? "" : "disabled"%>></td>
+				<td><input type="submit" name="operation" value="next"
+					<%=(nextList.size() != 0) ? "" : "disabled"%>></td>
+			</tr>
+		</table>
+		<input type="hidden" name="pageNo" value="<%=pageNo%>">
+	</form>
+	<%@include file="Footer.jsp"%>
+</body>
+</html>

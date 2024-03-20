@@ -1,0 +1,47 @@
+<%@page import="in.co.rays.bean.UserBean"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="UserCtl" method="post">
+		<%
+			UserBean bean = new UserBean();
+		%>
+		<table>
+			<tr>
+				<th>firstName</th>
+				<td><input type="text" value=""></td>
+			</tr>
+			<tr>
+				<th>lastName</th>
+				<td><input type="text" value="lastName"></td>
+			</tr>
+			<tr>
+				<th>loginId</th>
+				<td><input type="text" value="loginId"></td>
+			</tr>
+			<tr>
+				<th>password</th>
+				<td><input type="text" value="password"></td>
+			</tr>
+			<tr>
+				<th>dob</th>
+				<td><input type="text" value="dob"></td>
+			</tr>
+			<tr>
+				<th>address</th>
+				<td><input type="text" value="address"></td>
+			</tr>
+
+		</table>
+
+
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+h4{
+background-color: skyblue;
+text-align: center;
+
+}
+
+</style>
+<body>
+	<%@include file="header1.jsp"%>
+	<hr>
+
+	<h2>Rays Technologies</h2>
+	<h4>Rays Technologies is premium Corporate Training and Placement
+		company. It is providing training on cutting-edge technologies like
+		AI, Machine Learning, Spring, Angular, React, Java, Python, Automated
+		Testing, etc. After IIT and NIT, Rays is one of the leading institute
+		in India from where IT Engineers are getting highest packages in
+		multinational companies</h4>
+
+	</form>
+
+</body>
+</html>
