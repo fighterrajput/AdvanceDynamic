@@ -24,34 +24,34 @@ h5 {
 		%>
 		<table border="1px">
 			<h5>
-			<tr>
-				<th>First Name</th>
-				<td><input type="text" value=""></td>
-			</tr>
-			<tr>
-				<th>Last Name</th>
-				<td><input type="text" value=""></td>
-			</tr>
-			<tr>
-				<th>Login Id</th>
-				<td><input type="text" value=""></td>
-			</tr>
-			<tr>
-				<th>Password</th>
-				<td><input type="text" value=""></td>
-			</tr>
-			<tr>
-				<th>Dob</th>
-				<td><input type="date" value=""></td>
-			</tr>
-			<tr>
-				<th>Address</th>
-				<td><input type="text" value=""></td>
-			</tr>
-			<tr>
-				<th>Submit</th>
-				<td><input type="submit"></td>
-			</tr>
+				<tr>
+					<th>First Name</th>
+					<td><input type="text" name="firstName"></td>
+				</tr>
+				<tr>
+					<th>Last Name</th>
+					<td><input type="text" name="lastName"></td>
+				</tr>
+				<tr>
+					<th>Login Id</th>
+					<td><input type="text" name="loginId"></td>
+				</tr>
+				<tr>
+					<th>Password</th>
+					<td><input type="text" name="password"></td>
+				</tr>
+				<tr>
+					<th>Dob</th>
+					<td><input type="date" name="dob"></td>
+				</tr>
+				<tr>
+					<th>Address</th>
+					<td><input type="text" name="address"></td>
+				</tr>
+				<tr>
+					<th>Submit</th>
+					<td><input type="submit"></td>
+				</tr>
 			</h5>
 		</table>
 

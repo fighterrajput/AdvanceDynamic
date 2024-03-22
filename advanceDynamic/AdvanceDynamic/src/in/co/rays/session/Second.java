@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 public class Second extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession session = req.getSession(true);
+		HttpSession session = req.getSession();//by default its true
 		System.out.println("second=" + session.getId()	);
 
 	}

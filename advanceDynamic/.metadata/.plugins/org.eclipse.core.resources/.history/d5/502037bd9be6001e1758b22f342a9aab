@@ -1,0 +1,69 @@
+<%@page import="in.co.rays.bean.UserBean"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+table {
+	background-position: center;
+	background-color: white;
+	text-align: center;
+	padding-top: 20px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+</style>
+</head>
+
+
+<body>
+	<%
+		int pageNo = (int) request.getAttribute("pageNo");
+		int index = ((pageNo - 1) * 5) + 1;
+		List nextList = (List) request.getAttribute("nextList");
+		List list = (List) request.getAttribute("list");
+		Iterator it = list.iterator();
+	%>
+	<form action="">
+		<table border="1px" style="width: 80%">
+			<tr>
+				<th>Select</th>
+				<th>S. No.</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Login Id</th>
+				<th>Password</th>
+				<th>Dob</th>
+				<th>Address</th>
+				<th>Edit</th>
+			</tr>
+			<%
+				while(it.hasNext()) {
+
+				
+			%>
+			<tr>
+				<td align="center"><input type="checkbox" name="ids"
+					value="<%=bean.getId()%>"></td>
+				<td align="center"><%=index++%></td>
+				<td align="center"><%=bean.getFirstName()%></td>
+				<td align="center"><%=bean.getLastName()%></td>
+				<td align="center"><%=bean.getLoginId()%></td>
+				<td align="center"><%=bean.getPassword()%></td>
+				<td align="center"><%=bean.getDob()%></td>
+				<td align="center"><%=bean.getAddress()%></td>
+				<td align="center"><a href="UserCtl.do?id=<%=bean.getId()%>">edit</a></td>
+			</tr>
+			<%
+				}
+			%>
+		</table>
+
+	</form>
+</body>
+</html>

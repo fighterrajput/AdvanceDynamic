@@ -18,7 +18,7 @@ public class SessionTracking extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String jsessionid = req.getParameter("jsessionid");
-		System.out.println("jsessionid="+jsessionid);
+		System.out.println("jsessionid="+jsessionid  );
 	}
 
 }

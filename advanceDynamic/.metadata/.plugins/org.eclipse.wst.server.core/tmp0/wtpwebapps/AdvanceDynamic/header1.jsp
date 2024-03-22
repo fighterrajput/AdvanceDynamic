@@ -8,19 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%
+		UserBean user = (UserBean) request.getAttribute("user");
+	%>
 	<form action="UserCtl1" method="post">
 
 		<h2>
 			Welcome,
-			<%
-			UserBean user = (UserBean) request.getAttribute("user");
-		%>
+
 			<%=user.getFirstName()%>
 		</h2>
 		<hr>
-		<a href="UserView1.jsp">AddUser</a>| <a href="#">UserList</a> | <a
-			href="#">LogOut</a>
+		<a href="UserView1.jsp">AddUser</a>| <a href="UserListCtl1">UserList</a>
+		| <a href="#">LogOut</a>
 		<hr>
 
 	</form>
